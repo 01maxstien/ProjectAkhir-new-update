@@ -15,6 +15,14 @@ class ManageMatch extends Component {
         inputImageTimAwayAdd:'',
         inputSkorHomeAdd: 0,
         inputSkorAwayAdd: 0,
+        inputWasitAdd:'',
+        inputKuningHomeAdd:'',
+        inputKuningAwayAdd:'',
+        inputMerahHomeAdd:'',
+        inputMerahAwayAdd:'',
+        inputGolHomeAdd:'',
+        inputGolAwayAdd:'',
+        inputStadionAdd:'',
         selectedTimHomeAdd: 0,
         selectedTimAwayAdd: 0,
         selectedTimHomeEdit: 0,
@@ -25,6 +33,14 @@ class ManageMatch extends Component {
         inputImageTimAwayEdit:'',
         inputSkorHomeEdit: 0,
         inputSkorAwayEdit: 0,
+        inputWasitEdit:'',
+        inputKuningHomeEdit:'',
+        inputKuningAwayEdit:'',
+        inputMerahHomeEdit:'',
+        inputMerahAwayEdit:'',
+        inputGolHomeEdit:'',
+        inputGolAwayEdit:'',
+        inputStadionEdit:'',
         selectedMatch: { id: 0}
     }
 
@@ -88,6 +104,31 @@ class ManageMatch extends Component {
     onInputImageTimAwayAddChange=(e)=>{
         this.setState({inputImageTimAwayAdd:e.target.value})
     }
+
+    onInputWasitAddChange=(e)=>{
+        this.setState({inputWasitAdd:e.target.value})
+    }
+    onInputKuningHomeAddChange=(e)=>{
+        this.setState({inputKuningHomeAdd:e.target.value})
+    }
+    onInputKuningAwayAddChange=(e)=>{
+        this.setState({inputKuningAwayAdd:e.target.value})
+    }
+    onInputMerahHomeAddChange=(e)=>{
+        this.setState({inputMerahHomeAdd:e.target.value})
+    }
+    onInputMerahAwayAddChange=(e)=>{
+        this.setState({inputMerahAwayAdd:e.target.value})
+    }
+    onInputGolHomeAddChange=(e)=>{
+        this.setState({inputGolHomeAdd:e.target.value})
+    }
+    onInputGolAwayAddChange=(e)=>{
+        this.setState({inputGolAwayAdd:e.target.value})
+    }
+    onInputStadionAddChange=(e)=>{
+        this.setState({inputStadionAdd:e.target.value})
+    }
 //===========================================================================================================
 //=========================FUNCTION EDIT=====================================================================
 
@@ -104,11 +145,6 @@ class ManageMatch extends Component {
         console.log(e.target.value)
         this.setState({ selectedTimAwayEdit: parseInt(e.target.value) })
     }
-    // onSelectTimEditChange = (e) => {
-    //     console.log(e.target.value)
-    //     this.setState({ selectedTimEdit: parseInt(e.target.value) })
-    // }
-
     onInputSkorHomeEditChange = (e) => {
         this.setState({ inputSkorHomeEdit: e.target.value })
     }
@@ -124,6 +160,31 @@ class ManageMatch extends Component {
     onInputImageTimAwayEditChange=(e)=>{
         this.setState({inputImageTimAwayEdit:e.target.value})
     }
+
+    onInputWasitEditChange=(e)=>{
+        this.setState({inputWasitEdit:e.target.value})
+    }
+    onInputKuningHomeEditChange=(e)=>{
+        this.setState({inputKuningHomeEdit:e.target.value})
+    }
+    onInputKuningAwayEditChange=(e)=>{
+        this.setState({inputKuningAwayEdit:e.target.value})
+    }
+    onInputMerahHomeEditChange=(e)=>{
+        this.setState({inputMerahHomeEdit:e.target.value})
+    }
+    onInputMerahAwayEditChange=(e)=>{
+        this.setState({inputMerahAwayEdit:e.target.value})
+    }
+    onInputGolHomeEditChange=(e)=>{
+        this.setState({inputGolHomeEdit:e.target.value})
+    }
+    onInputGolAwayEditChange=(e)=>{
+        this.setState({inputGolAwayEdit:e.target.value})
+    }
+    onInputStadionEditChange=(e)=>{
+        this.setState({inputStadionEdit:e.target.value})
+    }
 //===================================================================================
 
     onBtnAddClick = () => {
@@ -134,7 +195,15 @@ class ManageMatch extends Component {
             skorHome: parseInt(this.state.inputSkorHomeAdd),
             skorAway:parseInt(this.state.inputSkorAwayAdd),
             imageTimAway:this.state.inputImageTimAwayAdd,
-            idTimAway: this.state.selectedTimAwayAdd
+            idTimAway: this.state.selectedTimAwayAdd,
+            wasit:this.state.inputWasitAdd,
+            kuningHome:this.state.inputKuningHomeAdd,
+            kuningAway:this.state.inputKuningAwayAdd,
+            merahHome:this.state.inputMerahHomeAdd,
+            merahAway:this.state.inputMerahAwayAdd,
+            golHome:this.state.inputGolHomeAdd,
+            golAway:this.state.inputGolAwayAdd,
+            stadion:this.state.inputStadionAdd
         }).then((res) => {
             console.log(res.data)
             this.getInitialData()
@@ -163,7 +232,15 @@ class ManageMatch extends Component {
             skorHome: parseInt(this.state.inputSkorHomeEdit),
             skorAway:parseInt(this.state.inputSkorAwayEdit),
             imageTimAway:this.state.inputImageTimAwayEdit,
-            idTimAway: this.state.selectedTimAwayEdit
+            idTimAway: this.state.selectedTimAwayEdit,
+            wasit:this.state.inputWasitEdit,
+            kuningHome:this.state.inputKuningHomeEdit,
+            kuningAway:this.state.inputKuningAwayEdit,
+            merahHome:this.state.inputMerahHomeEdit,
+            merahAway:this.state.inputMerahAwayEdit,
+            golHome:this.state.inputGolHomeEdit,
+            golAway:this.state.inputGolAwayEdit,
+            stadion:this.state.inputStadionEdit
         }).then(res => {
             this.getInitialData();
         }).catch(err => {
@@ -202,7 +279,14 @@ class ManageMatch extends Component {
                             />
                         </td>
                         <td>{item.TimAway}</td>
-                        
+                        <td>{item.wasit}</td>
+                        <td>{item.kuningHome}</td>
+                        <td>{item.kuningAway}</td>
+                        <td>{item.merahHome}</td>
+                        <td>{item.merahAway}</td>
+                        <td>{item.golHome}</td>
+                        <td>{item.golAway}</td>
+                        <td>{item.stadion}</td>
                         <td>
                             <input 
                                 type="button" className='btn btn-warning' 
@@ -215,7 +299,15 @@ class ManageMatch extends Component {
                                         inputSkorHomeEdit: item.skorHome,
                                         inputSkorAwayEdit:item.skorAway,
                                         inputImageTimAwayEdit:item.imageTimAway,
-                                        selectedTimAwayEdit: item.idTimAway
+                                        selectedTimAwayEdit: item.idTimAway,
+                                        inputWasitEdit:item.wasit,
+                                        inputKuningHomeEdit:item.kuningHome,
+                                        inputKuningAwayEdit:item.kuningAway,
+                                        inputMerahHomeEdit:item.merahHome,
+                                        inputMerahAwayEdit:item.merahAway,
+                                        inputGolHomeEdit:item.golHome,
+                                        inputGolAwayEdit:item.golAway,
+                                        inputStadionEdit:item.stadion
                             })}/>
                         </td>
                         <td><input type="button" className='btn btn-danger' value="Delete" onClick={() => this.onBtnDeleteClick(item.id)} /></td>
@@ -271,6 +363,30 @@ class ManageMatch extends Component {
                             {this.renderListTim()}
                         </select>
                     </td>
+                    <td>
+                        <input type="text" value={this.state.inputWasitEdit} onChange={this.onInputWasitEditChange}  />
+                    </td>
+                    <td>
+                        <input type="text" value={this.state.inputKuningHomeEdit} onChange={this.onInputKuningHomeEditChange}  />
+                    </td>
+                    <td>
+                        <input type="text" value={this.state.inputKuningAwayEdit} onChange={this.onInputKuningAwayEditChange}  />
+                    </td>
+                    <td>
+                        <input type="text" value={this.state.inputMerahHomeEdit} onChange={this.onInputMerahHomeEditChange}  />
+                    </td>
+                    <td>
+                        <input type="text" value={this.state.inputMerahAwayEdit} onChange={this.onInputMerahAwayEditChange}  />
+                    </td>
+                    <td>
+                        <input type="text" value={this.state.inputGolHomeEdit} onChange={this.onInputGolHomeEditChange}  />
+                    </td>
+                    <td>
+                        <input type="text" value={this.state.inputGolAwayEdit} onChange={this.onInputGolAwayEditChange}  />
+                    </td>
+                    <td>
+                        <input type="text" value={this.state.inputStadionEdit} onChange={this.onInputStadionEditChange}  />
+                    </td>
                     
                     <td><input type="button" className='btn btn-primary' value="Cancel" onClick={() => this.setState({ selectedEditId: 0 })}/></td>
                     <td><input type="button" className='btn btn-success' value="Save" onClick={this.onBtnSaveUpdateClick} /></td>
@@ -296,6 +412,14 @@ class ManageMatch extends Component {
                                     <th>SkorAway</th>
                                     <th>ImageTimAway</th>
                                     <th>Tim Away</th>
+                                    <th>Wasit</th>
+                                    <th>Kartu Kuning Home</th>
+                                    <th>Kartu Kuning Away</th>
+                                    <th>Kartu Merah Home</th>
+                                    <th>Kartu Merah Away</th>
+                                    <th>Cetak Gol Home</th>
+                                    <th>Cetak Gol Away</th>
+                                    <th>Stadion</th>
                                     <th colspan="3">Option</th>
         
                                 </tr>
@@ -344,6 +468,30 @@ class ManageMatch extends Component {
                                             <option value={0}>-- Pilih Tim Away --</option>
                                             {this.renderListTim()}
                                         </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputWasitAdd} onChange={this.onInputWasitAddChange}  />
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputKuningHomeAdd} onChange={this.onInputKuningHomeAddChange}  />
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputKuningAwayAdd} onChange={this.onInputKuningAwayAddChange}  />
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputMerahHomeAdd} onChange={this.onInputMerahHomeAddChange}  />
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputMerahAwayAdd} onChange={this.onInputMerahAwayAddChange}  />
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputGolHomeAdd} onChange={this.onInputGolHomeAddChange}  />
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputGolAwayAdd} onChange={this.onInputGolAwayAddChange}  />
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputStadionAdd} onChange={this.onInputStadionAddChange}  />
                                     </td>
                                     <td colspan="2">
                                         <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
