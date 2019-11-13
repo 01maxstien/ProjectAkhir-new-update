@@ -4,9 +4,6 @@ import {connect} from 'react-redux'
 import { API_URL } from '../../helpers/apiurl';
 
 class BeritaDetails extends Component {
-    
-    
-
     state = {
         Berita : []
         }  
@@ -34,7 +31,7 @@ class BeritaDetails extends Component {
             return (
                 <div className='container mt-3'>
                     <div className="row">
-                        <div>
+                        <div className="text-center">
                             <div className="card" style={{width: '100%',marginTop:"150px"}}>
                                 <img className="card-img-top" src={val.imageBerita} alt="Card cap" />
                                 <div className="card-body">

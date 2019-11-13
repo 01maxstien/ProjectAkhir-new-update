@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 // import './Style.css'
 
 const MatchTable=(props)=>{
@@ -26,7 +26,9 @@ const MatchTable=(props)=>{
               <img className="card-img-top img" style={{height:'100px',width:'100px'}} src={props.imgHome} alt="Card" />
             </div>
             <div className="col-2 pt-4" style={{alignItems:"center"}}>
-              <input type="button" className="d-block btn btn-primary btn-block" value="Match Details"/>
+              <Link to={"/match-details/"+props.id}>
+                <input type="button" className="d-block btn btn-primary btn-block" value="Match Details"/>
+              </Link>
             </div>
         </div>
       </div>

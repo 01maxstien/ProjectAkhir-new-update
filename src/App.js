@@ -27,6 +27,7 @@ import Store from './components/Store/Store'
 import ProductDetails from './components/Product/ProductDetails'
 import Cart from './components/Cart/Cart'
 import Schedule from './components/Schedule/Schedule'
+import MatchDetails from './components/Match/MatchDetails'
 
 
 class App extends Component {
@@ -56,6 +57,7 @@ class App extends Component {
           <Route path="/cart" component={Cart} />
           <Route path="/product-details/:id" component={ProductDetails} />
           <Route path="/schedule" component={Schedule} />
+          <Route path="/match-details/:id" component={MatchDetails} />
           <Route path="/waitingemailverification" component={WaitingEmailVerification} />
           <Route path="/emailverified" component={EmailVerified} />
           <Route path="/manageProduct" component={ManageProduct} />
