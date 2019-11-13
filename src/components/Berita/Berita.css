@@ -1,0 +1,19 @@
+.judulAwal{
+    color:"white";
+    font-size: 30px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.judulBerita{
+    font-family: Times;
+    color:white;
+    font-size: "2%";
+}
+
+.isiberita{
+    margin-top:30px;
+    color:white;
+    font-family:Comic; 
+}
+

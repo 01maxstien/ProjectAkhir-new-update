@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+
+.container-player{
+	position:relative;
+	width:100px;
+	margin:150px auto 0;
+	height:200px;
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 440px;
+	grid-gap: 40px;
+}
+
+
+/* .card-player{
+	box-sizing: border-box;
+} */
+
+/* .render-card{
+	display: flex;
+} */
+
+.container-player .card-player{
+	position:inherit;
+	background:rgb(117, 19, 27);
+	overflow:hidden;
+	border-radius:10px;
+	transition: 0.5s;
+}
+
+.container-player .card-player:hover{
+	transform: translateY(-20px);
+	box-shadow: 0 20px 20px rgba(255, 255, 255, 0.2);
+}
+
+
+.container-player .card-player .img-box{
+	position:absolute;
+	top:0;
+	left: 0;
+	width:100%;
+	height:100%;
+	transition:0.5s;
+	box-sizing: border-box;
+}
+
+.img-box img{
+	position: absolute;
+	width:100px;
+	height:500px
+}
+.container-player .card-player:hover .img-box{
+	opacity:0.5;
+}
+
+.container-player .card-player .img-box img{
+	width:100%;
+}
+
+.container-player .card-player .content-player{
+	position:absolute;
+	width:100%;
+	height:60%;
+	bottom:-100%;
+	padding:20px;
+	padding-top: 60px;
+	box-sizing:border-box;
+	text-align: center;
+	transition:0.5s;
+}
+
+.container-player .card-player:hover .content-player{
+	bottom:0;
+}
+
+
+.containe-playerr .card-player .content-player{
+	background:linear-gradient(0deg,#c21833,transparent);
+}
+
+.container-player .card-player .content-player h2{
+	margin:0 0 10px;
+	padding: 0;
+	color:#fff;
+	font-size: 20px;
+}
+
+.container-player .card-player .content-player h2 span{
+	color:#fffeb3;
+	font-size: 16px;
+}
+
+.container-player .card-player.content-player p{
+	margin:0 0 10px;
+	padding: 0;
+	color:#fff;
+	font-size: 20px;
+}
+
+.container-player .card-player .content-player ul{
+	display:flex;
+	margin:20px 0 0;
+	padding:0;
+	align-items: center;
+	justify-content: center;
+}
+
+.container-player .card-player .content-player ul li{
+	list-style:none;
+}
+
+.container-player .card-player .content-player ul li a{
+	color:#fff;
+	padding:0 10px;
+	font-size:18px;
+	transition:0.5s;
+}

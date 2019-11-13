@@ -1,0 +1,133 @@
+import React from "react";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { 
+    inputRegisterEmail,
+    inputRegisterUsername,
+    inputRegisterConfirmEmail,
+    inputRegisterConfirmPassword,
+    inputRegisterPassword,
+    registerUser
+} from '../../actions';
+
+class Register extends React.Component {
+
+    onBtnRegisterClick = () => {
+      this.props.registerUser(this.props.registerForm)
+    }
+    renderButtonRegister = () => {
+      if(this.props.registerForm.loading) {
+        return (<>
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </>)
+      }
+
+      return <MDBBtn color="danger" style={{borderRadius: "10px"}} onClick={this.onBtnRegisterClick}>Register</MDBBtn>
+    }
+
+    render() {
+      if(this.props.user.username !== '') {
+        return <Redirect to="/" />
+      }
+
+      if(!this.props.registerForm.success) {
+        const { 
+          email, 
+          username, 
+          password, 
+          confirmEmail, 
+          confirmPassword 
+      } = this.props.registerForm;
+
+      return (
+          <MDBContainer className="pt-5" style={{marginBottom:"100px"}}>
+            <MDBRow className="justify-content-center" style={{marginTop:"110px"}}>
+              <MDBCol md="6">
+                <form>
+                  <p className="h5 text-center mb-4" style={{color:"white"}}>Sign up</p>
+                  <div className="grey-text">
+                    <MDBInput
+                      label="Username"
+                      icon="user"
+                      group
+                      value={username}
+                      onChange={(e) => this.props.inputRegisterUsername(e.target.value)}
+                      type="text"
+                      validate
+                      error="wrong"
+                      success="right"
+                    />
+                    <MDBInput
+                      label="Email"
+                      icon="envelope"
+                      group
+                      type="email"
+                      value={email}
+                      onChange={(e) => this.props.inputRegisterEmail(e.target.value)}
+                      validate
+                      error="wrong"
+                      success="right"
+                    />
+                    <MDBInput
+                      label="Confirm Email"
+                      icon="exclamation-triangle"
+                      group
+                      type="text"
+                      value={confirmEmail}
+                      onChange={(e) => this.props.inputRegisterConfirmEmail(e.target.value)}
+                      validate
+                      error="wrong"
+                      success="right"
+                    />
+                    <MDBInput
+                      label="Password"
+                      icon="lock"
+                      group
+                      type="password"
+                      value={password}
+                      onChange={(e) => this.props.inputRegisterPassword(e.target.value)}
+                      validate
+                    />
+                    <MDBInput
+                      label="Confirm Password"
+                      icon="lock"
+                      group
+                      type="password"
+                      value={confirmPassword}
+                      onChange={(e) => this.props.inputRegisterConfirmPassword(e.target.value)}
+                      validate
+                    />
+                  </div>
+                  <p className="text-danger text-center">
+                    {this.props.registerForm.error}
+                  </p>
+                  <div className="text-center">
+                    {this.renderButtonRegister()}
+                  </div>
+                </form>
+              </MDBCol>
+            </MDBRow>
+          </MDBContainer>
+        )
+      }
+       
+      return <Redirect to={`/waitingemailverification?email=${this.props.registerForm.emailSuccess}`} />
+    }
+  
+}
+
+const mapStateToProps = ({ registerForm, user }) => {
+    return { registerForm, user }
+}
+
+export default connect(mapStateToProps, { 
+    inputRegisterEmail,
+    inputRegisterConfirmEmail,
+    inputRegisterConfirmPassword,
+    inputRegisterPassword,
+    inputRegisterUsername,
+    registerUser
+})(Register);
