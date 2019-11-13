@@ -54,13 +54,12 @@ class Cart extends Component {
         var jsx = this.state.cartData.map((val, idx) => {
             return (
                 <tr>
-
                     <td>{val.Productname}</td>
                     <td>{val.price - (val.price * (val.discount/100))}</td>
                     <td><div className="btn-group">
-                        <button type="button" className="btn btn-secondary" onClick={() => this.onBtnEditQty('min', idx)}>-</button>
-                        <button type="button" className="btn btn-secondary">{val.quantity}</button>
-                        <button type="button" className="btn btn-secondary" onClick={() => this.onBtnEditQty('add', idx)}>+</button>
+                        <button type="button" className="btn btn-primary" onClick={() => this.onBtnEditQty('min', idx)}>-</button>
+                        <button type="button" className="btn btn-primary">{val.quantity}</button>
+                        <button type="button" className="btn btn-primary" onClick={() => this.onBtnEditQty('add', idx)}>+</button>
                     </div></td>
                     <td>{(val.price - (val.price * (val.discount/100))) * val.quantity}</td>
                     <td><input type="button" className="btn btn-danger btn-block" onClick={() => this.deleteCartItem(val.id)} value="Delete"/></td>
@@ -92,34 +91,36 @@ class Cart extends Component {
     render() {
         return (
             <div className="container" style={{marginTop:'200px'}}>
-                <table className="table mt-3 text-cente striped" style={{color:'white'}}>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total Price</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                         <tbody>
-                            {
-                                 this.state.cartData.length>0
-                                 ?
-                                 <>
-                                 
-                                 {this.renderCart()}
-                                 
-                                 </>
-                                 :
-                                 <>
-                                 <td><h3>Cart Masih Kosong</h3></td>
-                                 </>
-                            }
-                           
-                        </tbody>
-                </table>
-                
+                <h4 className="text-center">Daftar Cart Anda</h4>
+                <div className="table-responsive">
+                    <table className="table table-striped mt-3 text-center" style={{color:'black'}}>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total Price</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                            <tbody>
+                                {
+                                    this.state.cartData.length>0
+                                    ?
+                                    <>
+                                    
+                                    {this.renderCart()}
+                                    
+                                    </>
+                                    :
+                                    <>
+                                    <td><h3>Cart Masih Kosong</h3></td>
+                                    </>
+                                }
+                            
+                            </tbody>
+                    </table>
+                </div> 
             </div>
         );
     }

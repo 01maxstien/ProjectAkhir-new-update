@@ -4,7 +4,7 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { ubahPikachu } from '../../actions';
 import { API_URL } from '../../helpers/apiurl';
-import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import { MDBTable, MDBTableBody, MDBTableHead,MDBTableFoot } from 'mdbreact';
 
 class ManageGalleryVideo extends Component {
     state = { 
@@ -89,42 +89,43 @@ class ManageGalleryVideo extends Component {
     render() {
         console.log(this.props.actorPikachu)
         return (
-            <div>
+            <div className="container">
                 <center>
-                    <h4 style={{marginTop:"150px",color:'white'}}>Manage Gallery Video</h4>
-                    <MDBTable style={{width:'50%'}}>
-                        <MDBTableHead color="elegant-color" style={{color:'white'}}>
-                            <tr>
-                                <th>Id</th>
-                                <th>urlVideo</th>
-                                <th>Tanggal Upload</th>
-                                <th colspan="3">Option</th>
-                            </tr>
-                        </MDBTableHead>
-                        <tbody style={{color:'white'}}>
-                            {this.renderListVideo()}
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="text" value={this.state.inputVideoAdd} onChange={this.onInputVideoAddChange}  />
-                                </td>
-                                <td>
-                                    <input 
-                                        type="date"
-                                        value={this.state.inputTanggalVideoAdd}
-                                        onChange={this.onTanggalVideoAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
-                                </td>
-                                <td />
-                                <td />
-                            </tr>
-                        </tfoot>
-                    </MDBTable>
+                    <h4 style={{marginTop:"150px"}}>Manage Gallery Video</h4>
+                    <div className="table-responsive">
+                        <table className="table table-striped">
+                            <MDBTableHead color="elegant-color" style={{color:'white'}}>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>urlVideo</th>
+                                    <th>Tanggal Upload</th>
+                                    <th colspan="1">Option</th>
+                                </tr>
+                            </MDBTableHead>
+                            <tbody style={{color:'white',background:'black'}}>
+                                {this.renderListVideo()}
+                            </tbody>
+                            <MDBTableFoot color="elegant-color">
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="text" value={this.state.inputVideoAdd} onChange={this.onInputVideoAddChange}  />
+                                    </td>
+                                    <td>
+                                        <input 
+                                            type="date"
+                                            value={this.state.inputTanggalVideoAdd}
+                                            onChange={this.onTanggalVideoAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
+                                    </td>
+                                
+                                </tr>
+                            </MDBTableFoot>
+                        </table>
+                    </div>
                 </center>
             </div>
         )

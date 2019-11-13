@@ -271,76 +271,78 @@ class ManageProduct extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <center>
-                    <h4 style={{marginTop:"150px",color:'white'}}>Manage Product</h4>
-                    <MDBTable style={{width:'50%'}}>
-                        <MDBTableHead color="elegant-color" style={{color:'white'}}>
-                            <tr>
-                                <th>Id</th>
-                                <th>Nama</th>
-                                <th>Deskripsi</th>
-                                <th>Category</th>
-                                <th>Harga</th>
-                                <th>Discount</th>
-                                <th>Tanggal Input</th>
-                                <th>Image Product</th>
-                                <th colspan="3">Option</th>
-                            
-                            </tr>
-                        </MDBTableHead>
-                        <MDBTableBody style={{color:'black'}}>
-                            {this.renderListProduct()}
-                        </MDBTableBody>
-                        <MDBTableFoot color="elegant-color" style={{color:'white'}}>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="text" value={this.state.inputNamaAdd} onChange={this.onInputNamaAddChange}  />
-                                </td>
-                                <td>
-                                    <textarea 
-                                        value={this.state.inputDeskripsiAdd} 
-                                        onChange={this.onInputDeskripsiAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <select onChange={this.onSelectCategoryAddChange}>
-                                        <option value={0}>-- Pilih Category --</option>
-                                        {this.renderListCategory()}
-                                    </select>
-                                </td>
-                                <td>
-                                    <input
-                                        type="number"
-                                        value={this.state.inputHargaAdd}
-                                        onChange={this.onInputHargaAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <input
-                                        type="number"
-                                        value={this.state.inputDiscountAdd}
-                                        onChange={this.onDiscountInputAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <input 
-                                        type="date"
-                                        value={this.state.inputTanggalInputAdd}
-                                        onChange={this.onTanggalInputAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <input type="text" value={this.state.inputImageProductAdd} onChange={this.onInputImageProductAddChange}  />
-                                </td>
-                                <td colspan="2">
-                                    <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
-                                </td>
+                    <h4 style={{marginTop:"150px",color:'black'}}>Manage Product</h4>
+                    <div className="table-responsive">
+                        <table table className="table table-striped">
+                            <MDBTableHead color="elegant-color" style={{color:'white'}}>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nama</th>
+                                    <th>Deskripsi</th>
+                                    <th>Category</th>
+                                    <th>Harga</th>
+                                    <th>Discount</th>
+                                    <th>Tanggal Input</th>
+                                    <th>Image Product</th>
+                                    <th colspan="3">Option</th>
                                 
-                            </tr>
-                        </MDBTableFoot>
-                    </MDBTable>
+                                </tr>
+                            </MDBTableHead>
+                            <MDBTableBody style={{color:'black'}}>
+                                {this.renderListProduct()}
+                            </MDBTableBody>
+                            <MDBTableFoot color="elegant-color" style={{color:'white'}}>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="text" value={this.state.inputNamaAdd} onChange={this.onInputNamaAddChange}  />
+                                    </td>
+                                    <td>
+                                        <textarea 
+                                            value={this.state.inputDeskripsiAdd} 
+                                            onChange={this.onInputDeskripsiAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <select onChange={this.onSelectCategoryAddChange}>
+                                            <option value={0}>-- Pilih Category --</option>
+                                            {this.renderListCategory()}
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            value={this.state.inputHargaAdd}
+                                            onChange={this.onInputHargaAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            value={this.state.inputDiscountAdd}
+                                            onChange={this.onDiscountInputAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input 
+                                            type="date"
+                                            value={this.state.inputTanggalInputAdd}
+                                            onChange={this.onTanggalInputAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputImageProductAdd} onChange={this.onInputImageProductAddChange}  />
+                                    </td>
+                                    <td colspan="2">
+                                        <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
+                                    </td>
+                                    
+                                </tr>
+                            </MDBTableFoot>
+                        </table>
+                    </div>
                 </center>
             </div>
         )

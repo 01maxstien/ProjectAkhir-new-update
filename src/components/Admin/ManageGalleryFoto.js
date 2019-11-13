@@ -94,40 +94,42 @@ class ManageGalleryFoto extends Component {
     render() {
         console.log(this.props.actorPikachu)
         return (
-            <div>
+            <div className="container">
                 <center>
                     <h4 style={{marginTop:"150px",color:'white'}}>Manage Gallery Foto</h4>
-                    <MDBTable style={{width:'50%'}}>
-                        <MDBTableHead color="elegant-color" style={{color:'white'}}>
-                            <tr>
-                                <th>Id</th>
-                                <th>urlFoto</th>
-                                <th>Tanggal Upload</th>
-                                <th colspan="1">Option</th>
-                            </tr>
-                        </MDBTableHead>
-                        <MDBTableBody style={{color:'white',background:'black'}}>
-                            {this.renderListFoto()}
-                        </MDBTableBody>
-                        <MDBTableFoot color="elegant-color" >
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="text" value={this.state.inputFotoAdd} onChange={this.onInputFotoAddChange}  />
-                                </td>
-                                <td>
-                                    <input 
-                                        type="date"
-                                        value={this.state.inputTanggalFotoAdd}
-                                        onChange={this.onTanggalFotoAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
-                                </td>
-                            </tr>
-                        </MDBTableFoot>
-                    </MDBTable>
+                    <div className="table-responsive">
+                        <table className="table table-striped">
+                            <MDBTableHead color="elegant-color" style={{color:'white'}}>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>urlFoto</th>
+                                    <th>Tanggal Upload</th>
+                                    <th colspan="1">Option</th>
+                                </tr>
+                            </MDBTableHead>
+                            <MDBTableBody style={{color:'white',background:'black'}}>
+                                {this.renderListFoto()}
+                            </MDBTableBody>
+                            <MDBTableFoot color="elegant-color" >
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="text" value={this.state.inputFotoAdd} onChange={this.onInputFotoAddChange}  />
+                                    </td>
+                                    <td>
+                                        <input 
+                                            type="date"
+                                            value={this.state.inputTanggalFotoAdd}
+                                            onChange={this.onTanggalFotoAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
+                                    </td>
+                                </tr>
+                            </MDBTableFoot>
+                        </table>
+                    </div>
                 </center>
             </div>
         )

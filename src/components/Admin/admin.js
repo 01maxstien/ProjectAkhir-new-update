@@ -65,16 +65,6 @@ class admin extends Component {
                         </div>
                         <div className="col-4">
                             <div className="card text-white bg-dark mb-3 mt-3" style={{maxWidth: '18rem'}}>
-                                <div className="card-header text-center">Manage Store</div>
-                                <div className="card-body text-center">
-                                    <MDBNavLink to='/player' style={{color:"white",fontFamily:"Arial"}}>  
-                                        <button type="button" className="btn btn-danger btn-sm ">CLick Here !</button>
-                                    </MDBNavLink>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-4">
-                            <div className="card text-white bg-dark mb-3 mt-3" style={{maxWidth: '18rem'}}>
                                 <div className="card-header text-center">Manage Match</div>
                                 <div className="card-body text-center">
                                     <MDBNavLink to='/manageMatch' style={{color:"white",fontFamily:"Arial"}}>  

@@ -191,55 +191,56 @@ class ManageBerita extends Component {
     }
 
     render() {
-        console.log(this.props.actorPikachu)
         return (
-            <div>
+            <div className="container">
                 <center>
-                    <h4 style={{marginTop:"150px",color:'white'}}>Manage Berita</h4>
-                    <MDBTable style={{width:'50%'}}>
-                        <MDBTableHead color="elegant-color" style={{color:'white'}}>
-                            <tr>
-                                <th>Id</th>
-                                <th>Judul Berita</th>
-                                <th>Deskripsi</th>
-                                <th>Tanggal Berdiri</th>
-                                <th>Image</th>
-                                <th colspan="3">Option</th>
-                            </tr>
-                        </MDBTableHead>
-                        <MDBTableBody style={{color:'white',background:'black'}}>
-                            {this.renderListBerita()}
-                        </MDBTableBody>
-                        <MDBTableFoot color="elegant-color">
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="text" value={this.state.inputJudulAdd} onChange={this.onInputJudulAddChange}  />
-                                </td>
-                                <td>
-                                    <textarea 
-                                        value={this.state.inputDeskripsiAdd} 
-                                        onChange={this.onInputDeskripsiAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <input 
-                                        type="date"
-                                        value={this.state.inputTanggalBeritaAdd}
-                                        onChange={this.onTanggalBeritaAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <input type="text" value={this.state.inputImageBeritaAdd} onChange={this.onImageBeritaAddChange}  />
-                                </td>
-                                <td colSpan='2'>
-                                    <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
-                                </td>
-                                
-                                
-                            </tr>
-                        </MDBTableFoot>
-                    </MDBTable>
+                    <h4 style={{marginTop:"150px",color:'black'}}>Manage Berita</h4>
+                    <div className="table-responsive"> 
+                        <table className="table table-striped">
+                            <MDBTableHead color="elegant-color" style={{color:'white'}}>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Judul Berita</th>
+                                    <th>Deskripsi</th>
+                                    <th>Tanggal Berdiri</th>
+                                    <th>Image</th>
+                                    <th colspan="3">Option</th>
+                                </tr>
+                            </MDBTableHead>
+                            <MDBTableBody style={{color:'white',background:'black'}}>
+                                {this.renderListBerita()}
+                            </MDBTableBody>
+                            <MDBTableFoot color="elegant-color">
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="text" value={this.state.inputJudulAdd} onChange={this.onInputJudulAddChange}  />
+                                    </td>
+                                    <td>
+                                        <textarea 
+                                            value={this.state.inputDeskripsiAdd} 
+                                            onChange={this.onInputDeskripsiAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input 
+                                            type="date"
+                                            value={this.state.inputTanggalBeritaAdd}
+                                            onChange={this.onTanggalBeritaAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputImageBeritaAdd} onChange={this.onImageBeritaAddChange}  />
+                                    </td>
+                                    <td colSpan='2'>
+                                        <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
+                                    </td>
+                                    
+                                    
+                                </tr>
+                            </MDBTableFoot>
+                        </table>
+                    </div>
                 </center>
             </div>
         )

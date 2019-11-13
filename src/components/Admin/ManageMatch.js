@@ -190,7 +190,7 @@ class ManageMatch extends Component {
                         <td>
                             <img 
                                 src={item.imageTimHome}
-                                style={{ width: '200px',height:'100px' }}
+                                style={{ width: '100px',height:'100px' }}
                             />
                         </td>
                         <td>{item.skorHome}</td>
@@ -198,7 +198,7 @@ class ManageMatch extends Component {
                         <td>
                             <img 
                                 src={item.imageTimAway}
-                                style={{ width: '200px',height:'100px' }}
+                                style={{ width: '100px',height:'100px' }}
                             />
                         </td>
                         <td>{item.TimAway}</td>
@@ -281,76 +281,78 @@ class ManageMatch extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <center>
                     <h4 style={{marginTop:"150px",color:'Black'}}>Manage Match</h4>
-                    <MDBTable style={{width:'50%'}}>
-                        <MDBTableHead color="elegant-color" style={{color:'white'}}>
-                            <tr>
-                                <th>Id</th>
-                                <th>Tanggal Match</th>
-                                <th>Tim Home</th>
-                                <th>ImageTimHome</th>
-                                <th>SkorHome</th>
-                                <th>SkorAway</th>
-                                <th>ImageTimAway</th>
-                                <th>Tim Away</th>
-                                <th colspan="3">Option</th>
-    
-                            </tr>
-                        </MDBTableHead>
-                        <MDBTableBody style={{color:'black'}}>
-                            {this.renderListMatch()}
-                        </MDBTableBody>
-                        <MDBTableFoot color="elegant-color" style={{color:'white'}}>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input 
-                                        type="date"
-                                        value={this.state.inputTanggalMatchAdd}
-                                        onChange={this.onTanggalMatchAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <select onChange={this.onSelectTimHomeAddChange}>
-                                        <option value={0}>-- Pilih Tim Home --</option>
-                                        {this.renderListTim()}
-                                    </select>
-                                </td>
-                                <td>
-                                    <input type="text" value={this.state.inputImageTimHomeAdd} onChange={this.onInputImageTimHomeAddChange}  />
-                                </td>
-                                <td>
-                                    <input
-                                        type="number"
-                                        value={this.state.inputSkorHomeAdd}
-                                        onChange={this.onInputSkorHomeAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <input
-                                        type="number"
-                                        value={this.state.inputSkorAwayAdd}
-                                        onChange={this.onInputSkorAwayAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <input type="text" value={this.state.inputImageTimAwayAdd} onChange={this.onInputImageTimAwayAddChange}  />
-                                </td>
-                                <td>
-                                    <select onChange={this.onSelectTimAwayAddChange}>
-                                        <option value={0}>-- Pilih Tim Away --</option>
-                                        {this.renderListTim()}
-                                    </select>
-                                </td>
-                                <td colspan="2">
-                                    <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
-                                </td>
-                                
-                            </tr>
-                        </MDBTableFoot>
-                    </MDBTable>
+                    <div className="table-responsive">
+                        <table className="table table-striped">
+                            <MDBTableHead color="elegant-color" style={{color:'white'}}>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Tanggal Match</th>
+                                    <th>Tim Home</th>
+                                    <th>ImageTimHome</th>
+                                    <th>SkorHome</th>
+                                    <th>SkorAway</th>
+                                    <th>ImageTimAway</th>
+                                    <th>Tim Away</th>
+                                    <th colspan="3">Option</th>
+        
+                                </tr>
+                            </MDBTableHead>
+                            <MDBTableBody style={{color:'black'}}>
+                                {this.renderListMatch()}
+                            </MDBTableBody>
+                            <MDBTableFoot color="elegant-color" style={{color:'white'}}>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input 
+                                            type="date"
+                                            value={this.state.inputTanggalMatchAdd}
+                                            onChange={this.onTanggalMatchAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <select onChange={this.onSelectTimHomeAddChange}>
+                                            <option value={0}>-- Pilih Tim Home --</option>
+                                            {this.renderListTim()}
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputImageTimHomeAdd} onChange={this.onInputImageTimHomeAddChange}  />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            value={this.state.inputSkorHomeAdd}
+                                            onChange={this.onInputSkorHomeAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            value={this.state.inputSkorAwayAdd}
+                                            onChange={this.onInputSkorAwayAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.inputImageTimAwayAdd} onChange={this.onInputImageTimAwayAddChange}  />
+                                    </td>
+                                    <td>
+                                        <select onChange={this.onSelectTimAwayAddChange}>
+                                            <option value={0}>-- Pilih Tim Away --</option>
+                                            {this.renderListTim()}
+                                        </select>
+                                    </td>
+                                    <td colspan="2">
+                                        <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
+                                    </td>
+                                    
+                                </tr>
+                            </MDBTableFoot>
+                        </table>
+                    </div>
                 </center>
             </div>
         )

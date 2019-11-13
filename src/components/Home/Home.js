@@ -31,10 +31,10 @@ class Home extends Component {
                 </MDBView>
               </div> 
               <div className='row text-center mt-5'>
-                <div className="col-6" style={{paddingTop:'200px'}}>
+                <div className="col-6">
                   <img src={Liga}/>
                 </div>
-                <div className="col-6">
+                <div className="col-6 pt-5">
                   <Klasemen/>
                 </div>
               </div>

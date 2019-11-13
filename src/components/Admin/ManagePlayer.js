@@ -4,7 +4,7 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { ubahPikachu } from '../../actions';
 import { API_URL } from '../../helpers/apiurl';
-import { MDBTable, MDBTableBody, MDBTableHead,MDBInput } from 'mdbreact';
+import { MDBTable, MDBTableBody, MDBTableHead,MDBInput,MDBTableFoot } from 'mdbreact';
 
 class ManagePlayer extends Component {
     state = { 
@@ -239,61 +239,64 @@ class ManagePlayer extends Component {
         return (
             <div>
                 <center>
-                    <h4 style={{marginTop:"150px",color:'white'}}>Manage Player</h4>
-                    <MDBTable style={{width:'50%'}}>
-                        <MDBTableHead color="elegant-color" style={{color:'white'}}>
-                            <tr>
-                                <th>Id</th>
-                                <th>Nama</th>
-                                <th>Nomor Punggung</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Posisi</th>
-                                <th>Image Player</th>
-                                <th colspan="3">Option</th>
-                            </tr>
-                        </MDBTableHead>
-                        <tbody style={{color:'white'}}>
-                            {this.renderListPlayer()}
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="text" value={this.state.inputNamaAdd} onChange={this.onInputNamaAddChange}  />
-                                </td>
-                                <td>
-                                    <input
-                                        type="number"
-                                        value={this.state.inputNomorPunggungAdd}
-                                        onChange={this.onInputNomorPunggungAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <input 
-                                        type="date"
-                                        value={this.state.inputTanggalLahirAdd}
-                                        onChange={this.onTanggalLahirAddChange}
-                                    />
-                                </td>
-                                <td>
-                                    <select onChange={this.onSelectPosisiPlayerAddChange}>
-                                        <option value={0}>-- Pilih Posisi Pemain --</option>
-                                        {this.renderListPosisi()}
-                                    </select>
-                                </td>
+                    <h4 style={{marginTop:"150px",color:'Black'}}>Manage Player</h4>
+                    <div className="table-responsive pl-3 pr-3"> 
+                        <table className="table table-striped">
+                            <MDBTableHead color="elegant-color" style={{color:'white'}}>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nama</th>
+                                    <th>Nomor Punggung</th>
+                                    <th>Tanggal Lahir</th>
+                                    <th>Posisi</th>
+                                    <th>Image Player</th>
+                                    <th colspan="2">Option</th>
+                                </tr>
+                            </MDBTableHead>
+                            <tbody style={{color:'black'}}>
+                                {this.renderListPlayer()}
+                            </tbody>
+                            <MDBTableFoot color="elegant-color">
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="text" value={this.state.inputNamaAdd} onChange={this.onInputNamaAddChange}  />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            value={this.state.inputNomorPunggungAdd}
+                                            onChange={this.onInputNomorPunggungAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input 
+                                            type="date"
+                                            value={this.state.inputTanggalLahirAdd}
+                                            onChange={this.onTanggalLahirAddChange}
+                                        />
+                                    </td>
+                                    <td>
+                                        <select onChange={this.onSelectPosisiPlayerAddChange}>
+                                            <option value={0}>-- Pilih Posisi Pemain --</option>
+                                            {this.renderListPosisi()}
+                                        </select>
+                                    </td>
 
-                                <td>
-                                    <input type="text" value={this.state.inputImagePlayerAdd} onChange={this.onInputImagePlayerAddChange}  />
-                                </td>
-                               
-                                <td>
-                                    <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
-                                </td>
-                                <td />
-                                <td />
-                            </tr>
-                        </tfoot>
-                    </MDBTable>
+                                    <td>
+                                        <input type="text" value={this.state.inputImagePlayerAdd} onChange={this.onInputImagePlayerAddChange}  />
+                                    </td>
+                                
+                                    <td colSpan="2">
+                                        <input type="button" className='btn btn-primary' value="Add" onClick={this.onBtnAddClick} />
+                                    </td>
+                                    
+                                    
+                                </tr>
+                            </MDBTableFoot>
+                        </table>
+                    </div>
+
                 </center>
             </div>
         )
